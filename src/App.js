@@ -51,12 +51,10 @@ class App extends Component {
       this.setState({ loading: true })
 
       try {
-         // const res = await fetch(`${wordAPIbaseURL}?key=${wordAPIKey}`);
          let dbURL = 'https://raw.githubusercontent.com/pogonik/react-hangman-for-team-sava/master/db.json'
          let res = await fetch(dbURL);
          let word = await res.json();
          let wordNo = Math.floor(Math.random()*60);
-         console.log(word);
          word = word[wordNo];
 
          let hits = [];
