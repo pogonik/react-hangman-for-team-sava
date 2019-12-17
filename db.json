@@ -1,1 +1,11 @@
-["imagine", "transport", "forecast", "remain", "bottle", "onerous", "future", "romantic", "kitten", "gifted", "marvelous"]
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "hello"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
