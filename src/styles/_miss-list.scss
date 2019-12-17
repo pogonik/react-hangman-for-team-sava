@@ -1,0 +1,13 @@
+.missWrapper {
+   width: 60%;
+   font-size: 32px;
+   color: $darkGrey;
+   text-transform: uppercase;
+
+   .missList {
+      font-size: 5.75rem;
+      letter-spacing: 1.35rem;
+      color: $purple;
+      word-break: break-all;
+   }
+}

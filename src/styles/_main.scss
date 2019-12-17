@@ -1,0 +1,36 @@
+@import-normalize;
+
+$purpleDark: #3b4163;
+$purple: #4d69fa;
+$darkGrey: #53555d;
+
+body {
+   font-family: "Aller Display";
+   background-color: #3b4163;
+}
+
+#root {
+   width: 80%;
+   margin: 100px auto 0;
+   background-color: #FFF;
+   border-radius: 10px;
+   min-height: 600px;
+   display: flex;
+   position: relative;
+
+   .bgTriangle {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      border-bottom-right-radius: 9px;
+      fill: $purple;
+      z-index: 1;
+      width: auto;
+      height: 50%;
+   }
+
+   .wrapper {
+      flex-basis: 100%;
+      padding: 25px 0;
+   }
+}
