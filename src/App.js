@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Content from './components/Content';
 import Spinner from './components/Spinner';
-import { wordAPIbaseURL, wordAPIKey, getIndexes } from './lib/utils';
+import { getIndexes } from './lib/utils';
 
 class App extends Component {
 
@@ -51,26 +51,20 @@ class App extends Component {
       this.setState({ loading: true })
 
       try {
-         const res = await fetch(`${wordAPIbaseURL}?key=${wordAPIKey}`);
+         // const res = await fetch(`${wordAPIbaseURL}?key=${wordAPIKey}`);
+         let dbURL = 'https://raw.githubusercontent.com/pogonik/react-hangman-for-team-sava/master/db.json'
+         let res = await fetch(dbURL);
          let word = await res.json();
-         word = word[0];
+         let wordNo = Math.floor(Math.random()*60);
+         console.log(word);
+         word = word[wordNo];
 
          let hits = [];
-         // 0 for every letter. no zero's means all letters nailed - game over
          for (var i = 0; i < word.length; i++) {
             hits[i] = 0;
          }
 
          this.setState({ word, hits, misses: [], gameOver: false, loading: false })
-         // this.setState( state => {
-         //    state.word = word;
-         //    state.hits = hits;
-         //    state.misses = [];
-         //    state.gameOver = false;
-         //    state.loading = false;
-         //
-         //    return state;
-         // })
 
       } catch (e) {
 
